@@ -25,16 +25,7 @@
                 Click="LoadVhicleApi_ClickAsync">
                 Find a car
             </Button>
-            <TextBlock x:Name="content" RenderTransformOrigin="0.5,0.5" Height="94" Margin="-1,0,-331,0">
-                <TextBlock.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0.761"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBlock.RenderTransform>
-            </TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="2" x:Name="content"/>
         </StackPanel>
     </Grid>
 </Window>
