@@ -22,19 +22,42 @@
             <Button
                 Grid.Row="2"
                 Grid.Column="1"
-                Click="LoadVhicleApi_ClickAsync">
+                Click="LoadVhicleApi_Click">
                 Find a car
             </Button>
-            <TextBlock x:Name="content" RenderTransformOrigin="0.5,0.5" Height="94" Margin="-1,0,-331,0">
+            <TextBlock
+                x:Name="content"
+                Height="94"
+                Margin="-1,0,-331,0"
+                RenderTransformOrigin="0.5,0.5">
                 <TextBlock.RenderTransform>
                     <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0.761"/>
-                        <TranslateTransform/>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="0.761" />
+                        <TranslateTransform />
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
         </StackPanel>
+        <Button
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Width="231"
+            Height="43"
+            Margin="35,114,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="DataBaseConnetionButton_Click"
+            Content="Connect with DB and show data" />
+        <DataGrid
+            x:Name="DataField"
+            Grid.Row="1"
+            Width="412"
+            Height="167"
+            Margin="35,53.6,0,-176.6"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" Grid.Column="1" />
+
     </Grid>
 </Window>

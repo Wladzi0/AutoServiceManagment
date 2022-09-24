@@ -1,16 +1,13 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
 using System.IO;
 using System.Net;
-using System.Collections.Generic;
-using System.Windows;
+using System.Windows.Controls;
 
 namespace ApiLibrary
 {
     public class ApiProcessor
     {
-        public static void LoadBasicCarContent()
+        public static void LoadBasicCarContent(DataGrid dataGrid)
         {
             string makeUrl = "https://vpic.nhtsa.dot.gov/api/vehicles/decodevinvaluesextended/5UXWX7C5*BA?format=json&modelyear=2011";
 
@@ -22,13 +19,10 @@ namespace ApiLibrary
             using (StreamReader streamReader = new StreamReader(response.GetResponseStream()))
             {
                 responseToString = streamReader.ReadToEnd();
-                
             }
-             //JObject obj = JObject.Parse(responseToString);
+            MakeModel make = JsonConvert.DeserializeObject<MakeModel>(responseToString);
 
-             //var make = (string)obj.SelectToken("Results[0].Model");
-          MakeModel make = JsonConvert.DeserializeObject<MakeModel>(responseToString);
-
+            dataGrid.ItemsSource = make.Results;
         }
       
     }
